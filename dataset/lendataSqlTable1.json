@@ -1,0 +1,57 @@
+{
+	"name": "lendataSqlTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "sqlserver_sevice",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "Correlationid",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Operation",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Status",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Eventcategory",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Level",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Level3",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 0
+			},
+			{
+				"name": "Prop_0",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "lendata"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

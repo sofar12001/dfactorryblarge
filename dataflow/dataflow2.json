@@ -1,0 +1,81 @@
+{
+	"name": "dataflow2",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "logcsv",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "lofSqlTable1",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          Correlationid as string,",
+				"          Operationname as string,",
+				"          Status as string,",
+				"          Eventcategory as string,",
+				"          Level as string,",
+				"          Time as string,",
+				"          Subscription as string,",
+				"          Eventinitiatedby as string,",
+				"          Resourcetype as string,",
+				"          Resourcegroup as string,",
+				"          Resource as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          Correlationid as string,",
+				"          Operationname as string,",
+				"          Status as string,",
+				"          Eventcategory as string,",
+				"          Level as string,",
+				"          Time as string,",
+				"          Subscription as string,",
+				"          Eventinitiatedby as string,",
+				"          Resourcetype as string,",
+				"          Resourcegroup as string,",
+				"          Resource as string",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError',",
+				"     mapColumn(",
+				"          Correlationid,",
+				"          Operationname,",
+				"          Status,",
+				"          Eventcategory,",
+				"          Level,",
+				"          Time,",
+				"          Subscription,",
+				"          Eventinitiatedby,",
+				"          Resourcetype,",
+				"          Resourcegroup,",
+				"          Resource",
+				"     )) ~> sink1"
+			]
+		}
+	}
+}

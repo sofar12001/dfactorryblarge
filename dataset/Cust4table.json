@@ -1,0 +1,17 @@
+{
+	"name": "Cust4table",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "mkpooldb_service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "DimCustomer"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

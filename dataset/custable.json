@@ -1,0 +1,17 @@
+{
+	"name": "custable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "markepooldb_service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Customer2"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

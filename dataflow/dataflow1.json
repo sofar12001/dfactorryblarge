@@ -1,0 +1,68 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "customer02csv",
+						"type": "DatasetReference"
+					},
+					"name": "cutomerinpustream"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "cusotmerevisiedcsv",
+						"type": "DatasetReference"
+					},
+					"name": "custoupstream"
+				}
+			],
+			"transformations": [
+				{
+					"name": "selectcolumns"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          CustomerID as string,",
+				"          NameStyle as string,",
+				"          Title as string,",
+				"          FirstName as string,",
+				"          MiddleName as string,",
+				"          LastName as string,",
+				"          Suffix as string,",
+				"          CompanyName as string,",
+				"          SalesPerson as string,",
+				"          EmailAddress as string,",
+				"          Phone as string,",
+				"          PasswordHash as string,",
+				"          PasswordSalt as string,",
+				"          rowguid as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> cutomerinpustream",
+				"cutomerinpustream select(mapColumn(",
+				"          CustomerID,",
+				"          CompanyName,",
+				"          SalesPerson",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> selectcolumns",
+				"selectcolumns sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     partitionFileNames:['cust02'],",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> custoupstream"
+			]
+		}
+	}
+}

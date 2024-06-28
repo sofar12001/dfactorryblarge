@@ -1,0 +1,13 @@
+{
+	"name": "HttpServer2_service",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://en.wikipedia.org/w/api.php?action=parse&page=List_of_countries_by_GDP_(nominal)_per_capita&format=json",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

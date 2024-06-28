@@ -1,0 +1,6 @@
+{
+	"name": "vm0611Runtime",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

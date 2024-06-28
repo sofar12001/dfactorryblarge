@@ -1,0 +1,17 @@
+{
+	"name": "vm0611_server",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "FileServer",
+		"typeProperties": {
+			"host": "D:\\nginx-1.26.1\\logs",
+			"userId": "vmuser",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJhOGM3N2JmNy1iOTM3LTQzNTMtYjE2Ny00YTQxN2Y4N2NiMDQiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "vm0611Runtime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

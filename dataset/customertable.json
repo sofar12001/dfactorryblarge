@@ -1,0 +1,17 @@
+{
+	"name": "customertable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "mkpooldb_service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "cutomer3"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,17 @@
+{
+	"name": "dimproducttable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseLegacy",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "dimProduct"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

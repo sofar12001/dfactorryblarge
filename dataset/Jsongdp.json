@@ -1,0 +1,19 @@
+{
+	"name": "Jsongdp",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DataLakemarketing_service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "parquet"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

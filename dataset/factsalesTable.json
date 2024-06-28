@@ -1,0 +1,17 @@
+{
+	"name": "factsalesTable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseLegacy",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "FactSales"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

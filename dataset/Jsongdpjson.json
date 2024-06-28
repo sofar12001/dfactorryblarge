@@ -1,0 +1,193 @@
+{
+	"name": "Jsongdpjson",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DataLakemarketing_service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "80b8b713f6bf3e01d8436597a9cf42a8c78d518b84d2436532cfd08769962d28",
+				"fileSystem": "csv"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"parse": {
+					"type": "object",
+					"properties": {
+						"title": {
+							"type": "string"
+						},
+						"pageid": {
+							"type": "integer"
+						},
+						"revid": {
+							"type": "integer"
+						},
+						"text": {
+							"type": "object",
+							"properties": {
+								"*": {
+									"type": "string"
+								}
+							}
+						},
+						"langlinks": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"lang": {
+										"type": "string"
+									},
+									"url": {
+										"type": "string"
+									},
+									"langname": {
+										"type": "string"
+									},
+									"autonym": {
+										"type": "string"
+									},
+									"*": {
+										"type": "string"
+									}
+								}
+							}
+						},
+						"categories": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"sortkey": {
+										"type": "string"
+									},
+									"hidden": {
+										"type": "string"
+									},
+									"*": {
+										"type": "string"
+									}
+								}
+							}
+						},
+						"links": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"ns": {
+										"type": "integer"
+									},
+									"exists": {
+										"type": "string"
+									},
+									"*": {
+										"type": "string"
+									}
+								}
+							}
+						},
+						"templates": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"ns": {
+										"type": "integer"
+									},
+									"exists": {
+										"type": "string"
+									},
+									"*": {
+										"type": "string"
+									}
+								}
+							}
+						},
+						"images": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"externallinks": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"sections": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"toclevel": {
+										"type": "integer"
+									},
+									"level": {
+										"type": "string"
+									},
+									"line": {
+										"type": "string"
+									},
+									"number": {
+										"type": "string"
+									},
+									"index": {
+										"type": "string"
+									},
+									"fromtitle": {
+										"type": "string"
+									},
+									"byteoffset": {
+										"type": "integer"
+									},
+									"anchor": {
+										"type": "string"
+									},
+									"linkAnchor": {
+										"type": "string"
+									}
+								}
+							}
+						},
+						"showtoc": {
+							"type": "string"
+						},
+						"parsewarnings": {
+							"type": "array"
+						},
+						"displaytitle": {
+							"type": "string"
+						},
+						"iwlinks": {
+							"type": "array"
+						},
+						"properties": {
+							"type": "array",
+							"items": {
+								"type": "object",
+								"properties": {
+									"name": {
+										"type": "string"
+									},
+									"*": {
+										"type": "integer"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

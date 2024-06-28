@@ -1,0 +1,9 @@
+{
+	"name": "dfactory0611",
+	"location": "uksouth",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "484400dc-c339-48b5-84ca-f7fb4e4ebd8c",
+		"tenantId": "ba0e7eed-c197-4894-9aed-9ca1b0aa1960"
+	}
+}
